@@ -9,6 +9,7 @@
 <style>
 :root {
     --midnight: #080711;
+    --deep-purple: #181127;
     --burgundy: #6d213f;
     --rose: #dc7899;
     --gold: #f2d28c;
@@ -21,7 +22,7 @@
 }
 
 html {
-    scroll-behaviour: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -29,10 +30,16 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     background:
-        radial-gradient(circle at 20% 20%,
-        rgba(109,33,63,0.32), transparent 35%),
-        radial-gradient(circle at 80% 70%,
-        rgba(80,55,120,0.22), transparent 35%),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(109, 33, 63, 0.32),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(80, 55, 120, 0.22),
+            transparent 35%
+        ),
         var(--midnight);
     color: var(--soft-white);
     font-family: Arial, sans-serif;
@@ -47,7 +54,7 @@ body {
     height: 6px;
     border-radius: 50%;
     background: var(--gold);
-    opacity: 0.45;
+    opacity: 0;
     animation: floatUp linear infinite;
     pointer-events: none;
 }
@@ -82,7 +89,7 @@ body {
 }
 
 @keyframes floatUp {
-    from {
+    0% {
         transform: translateY(0) scale(0.7);
         opacity: 0;
     }
@@ -91,13 +98,13 @@ body {
         opacity: 0.5;
     }
 
-    to {
+    100% {
         transform: translateY(-110vh) scale(1.5);
         opacity: 0;
     }
 }
 
-/* GENERAL */
+/* GENERAL LAYOUT */
 
 .screen {
     min-height: 100vh;
@@ -147,28 +154,34 @@ body {
     inset: 0;
     z-index: 100;
     background:
-        radial-gradient(circle at top,
-        rgba(109,33,63,0.48), transparent 43%),
-        linear-gradient(145deg, #080711, #181127);
+        radial-gradient(
+            circle at top,
+            rgba(109, 33, 63, 0.48),
+            transparent 43%
+        ),
+        linear-gradient(
+            145deg,
+            var(--midnight),
+            var(--deep-purple)
+        );
 }
 
 .gate-card {
     width: 100%;
     max-width: 520px;
     padding: 45px 28px;
-    border: 1px solid rgba(242,210,140,0.25);
+    border: 1px solid rgba(242, 210, 140, 0.25);
     border-radius: 28px;
-    background: rgba(255,255,255,0.055);
-    box-shadow: 0 25px 80px rgba(0,0,0,0.45);
-    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
     text-align: center;
 }
 
 .gate-card h1 {
     margin: 18px 0 12px;
+    color: var(--cream);
     font-family: Georgia, serif;
     font-size: clamp(38px, 8vw, 62px);
-    color: var(--cream);
 }
 
 .gate-card p {
@@ -180,10 +193,10 @@ body {
     width: 100%;
     margin-top: 20px;
     padding: 17px 18px;
-    border: 1px solid rgba(242,210,140,0.35);
+    border: 1px solid rgba(242, 210, 140, 0.35);
     border-radius: 14px;
     outline: none;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     color: white;
     font-size: 17px;
     text-align: center;
@@ -197,6 +210,7 @@ body {
     min-height: 26px;
     margin-top: 15px;
     color: #ffabc4;
+    line-height: 1.5;
 }
 
 /* BUTTONS */
@@ -215,19 +229,23 @@ body {
     color: white;
     font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 12px 30px rgba(109,33,63,0.38);
-    transition: 0.25s ease;
+    box-shadow: 0 12px 30px rgba(109, 33, 63, 0.38);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .button:hover,
 .button:active {
     transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(109, 33, 63, 0.5);
 }
 
 .button.secondary {
     background: transparent;
-    border: 1px solid rgba(109,33,63,0.45);
+    border: 1px solid rgba(109, 33, 63, 0.45);
     color: var(--burgundy);
 }
 
@@ -235,18 +253,18 @@ body {
 
 #welcome h1 {
     margin: 12px 0;
+    color: var(--gold);
     font-family: Georgia, serif;
     font-size: clamp(48px, 9vw, 82px);
-    color: var(--gold);
 }
 
 #welcome .opening {
     max-width: 720px;
     margin: 25px auto;
+    color: var(--cream);
     font-family: Georgia, serif;
     font-size: clamp(20px, 4vw, 28px);
     line-height: 1.8;
-    color: var(--cream);
 }
 
 .date {
@@ -268,9 +286,9 @@ body {
 }
 
 .story-heading h2 {
+    color: var(--gold);
     font-family: Georgia, serif;
     font-size: clamp(38px, 7vw, 62px);
-    color: var(--gold);
 }
 
 .story-heading p {
@@ -286,10 +304,10 @@ body {
     border-radius: 0 24px 24px 0;
     background: linear-gradient(
         135deg,
-        rgba(255,255,255,0.075),
-        rgba(255,255,255,0.025)
+        rgba(255, 255, 255, 0.075),
+        rgba(255, 255, 255, 0.025)
     );
-    box-shadow: 0 18px 50px rgba(0,0,0,0.24);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
 }
 
 .chapter-number {
@@ -302,15 +320,15 @@ body {
 
 .chapter h3 {
     margin: 12px 0;
+    color: var(--cream);
     font-family: Georgia, serif;
     font-size: clamp(29px, 5vw, 42px);
-    color: var(--cream);
 }
 
 .chapter p {
     color: #ded3d9;
-    line-height: 1.9;
     font-size: 17px;
+    line-height: 1.9;
 }
 
 /* MEMORY PHOTO */
@@ -319,10 +337,10 @@ body {
     max-width: 680px;
     margin: 32px auto 10px;
     padding: 10px;
-    border: 1px solid rgba(242,210,140,0.22);
+    border: 1px solid rgba(242, 210, 140, 0.22);
     border-radius: 25px;
-    background: rgba(255,255,255,0.05);
-    box-shadow: 0 22px 60px rgba(0,0,0,0.35);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
     overflow: hidden;
 }
 
@@ -349,22 +367,23 @@ body {
     text-align: center;
 }
 
-/* YEAR REVEAL */
+/* ONE-YEAR REVEAL */
 
 #yearSection {
     padding: 95px 7%;
     text-align: center;
     background:
         radial-gradient(
-        circle,
-        rgba(109,33,63,0.34),
-        transparent 62%);
+            circle,
+            rgba(109, 33, 63, 0.34),
+            transparent 62%
+        );
 }
 
 #yearSection h2 {
+    color: var(--gold);
     font-family: Georgia, serif;
     font-size: clamp(38px, 7vw, 65px);
-    color: var(--gold);
 }
 
 .counters {
@@ -377,9 +396,9 @@ body {
 
 .counter {
     padding: 26px 15px;
-    border: 1px solid rgba(242,210,140,0.2);
+    border: 1px solid rgba(242, 210, 140, 0.2);
     border-radius: 20px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .counter strong {
@@ -397,10 +416,10 @@ body {
     max-width: 720px;
     margin: 45px auto 25px;
     padding: 10px;
-    border: 1px solid rgba(242,210,140,0.28);
+    border: 1px solid rgba(242, 210, 140, 0.28);
     border-radius: 28px;
-    background: rgba(255,255,255,0.06);
-    box-shadow: 0 28px 75px rgba(0,0,0,0.42);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 28px 75px rgba(0, 0, 0, 0.42);
     overflow: hidden;
 }
 
@@ -418,8 +437,8 @@ body {
 }
 
 .year-photo p {
-    padding: 22px 15px 14px;
     margin: 0;
+    padding: 22px 15px 14px;
     color: var(--cream);
     font-family: Georgia, serif;
     font-size: 19px;
@@ -450,9 +469,9 @@ body {
         #a04b6b,
         #601f3a
     );
-    box-shadow: 0 25px 60px rgba(0,0,0,0.38);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.38);
     cursor: pointer;
-    transition: 0.35s ease;
+    transition: transform 0.35s ease;
 }
 
 .envelope:hover,
@@ -486,12 +505,12 @@ body {
     background: var(--cream);
     color: #35242e;
     text-align: left;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.38);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.38);
 }
 
 .letter h3 {
-    font-family: Georgia, serif;
     color: var(--burgundy);
+    font-family: Georgia, serif;
     font-size: 34px;
 }
 
@@ -509,8 +528,8 @@ body {
 
 footer {
     padding: 35px 7%;
-    text-align: center;
     color: #a99ba4;
+    text-align: center;
 }
 
 @media (min-width: 700px) {
@@ -558,7 +577,11 @@ footer {
             autocomplete="off"
         >
 
-        <button class="button" onclick="checkName()">
+        <button
+            id="openButton"
+            class="button"
+            type="button"
+        >
             Open it ✨
         </button>
 
@@ -582,7 +605,10 @@ footer {
 
         <p class="opening">
             Somewhere between my night shifts and your late-night
-            studying, between ordinary calls that lasted beautiful parts of my life.
+            studying, between ordinary calls that lasted longer
+            than planned and moments we never knew would become
+            memories, you became one of the most beautiful parts
+            of my life.
         </p>
 
         <p class="date">
@@ -593,7 +619,11 @@ footer {
             There are 365 days hidden behind this little button.
         </p>
 
-        <button class="button" onclick="beginStory()">
+        <button
+            class="button"
+            type="button"
+            onclick="beginStory()"
+        >
             Begin Our Story →
         </button>
 
@@ -641,11 +671,15 @@ footer {
 
         <p>
             Night after night, we talked. What began as ordinary
-            conversations slowly became the part of my shifts that
-            I looked forward to most.
+            conversations slowly became the part of my shifts
+            that I looked forward to most.
         </p>
 
-        <button class="button" onclick="showChapter(2)">
+        <button
+            class="button"
+            type="button"
+            onclick="showChapter(2)"
+        >
             Keep going →
         </button>
 
@@ -662,16 +696,16 @@ footer {
         <h3>The First Time Our Hands Met 🤍</h3>
 
         <p>
-            You travelled from Machakos, and I waited for you at
-            the stage in town. From there, we boarded a matatu
-            towards Islii, where you were staying with a relative
-            and where I was also working at the time.
+            You travelled from Machakos, and I waited for you
+            at the stage in town. From there, we boarded a matatu
+            heading towards Islii, where you were staying with
+            a relative and where I was also working at the time.
         </p>
 
         <p>
             You became nauseous during the journey. Somewhere
-            inside that ordinary matatu, our hands met for the
-            first time.
+            inside that ordinary matatu, our hands met for
+            the first time.
         </p>
 
         <p>
@@ -681,11 +715,11 @@ footer {
 
         <div class="memory-photo fade-in">
 
-            <!-- CORRECT HANDS PHOTO -->
+            <!-- HOLDING-HANDS PHOTO -->
 
             <img
-                src="Snapchat-1247899826.jpg"
-                alt="A photograph of our hands"
+                src="IMG-20260212-WA0020.jpg"
+                alt="A recent photograph of our hands"
             >
 
             <div class="memory-caption">
@@ -695,22 +729,25 @@ footer {
 
                 <br><br>
 
-                Of that matatu to Islii.
+                Of that matatu towards Islii.
                 Of you feeling unwell.
                 Of reaching for each other for the first time.
 
                 <br><br>
 
                 I did not know then how many more times
-                I would get to hold your hand,
-                but I am grateful that first one
-                was not the last. ❤️
+                I would get to hold your hand, but I am grateful
+                that first one was not the last. ❤️
 
             </div>
 
         </div>
 
-        <button class="button" onclick="showChapter(3)">
+        <button
+            class="button"
+            type="button"
+            onclick="showChapter(3)"
+        >
             Continue our story →
         </button>
 
@@ -728,8 +765,8 @@ footer {
 
         <p>
             We met at KICC and spent precious time together.
-            Nairobi gave that day a rainy sky, but the rain only
-            made the memory feel more cinematic.
+            Nairobi gave that day a rainy sky, but the rain
+            only made the memory feel more cinematic.
         </p>
 
         <p>
@@ -738,7 +775,11 @@ footer {
             the happiness of simply being together.
         </p>
 
-        <button class="button" onclick="showChapter(4)">
+        <button
+            class="button"
+            type="button"
+            onclick="showChapter(4)"
+        >
             One more memory →
         </button>
 
@@ -765,7 +806,11 @@ footer {
             and let me remain there just a little longer.
         </p>
 
-        <button class="button" onclick="showChapter(5)">
+        <button
+            class="button"
+            type="button"
+            onclick="showChapter(5)"
+        >
             Until morning →
         </button>
 
@@ -783,9 +828,9 @@ footer {
 
         <p>
             One night, I was working another night shift while
-            you were going through a difficult evening.
-            I did not want you to feel alone, so we stayed
-            together through a video call.
+            you were going through a difficult evening. I did
+            not want you to feel alone, so we stayed together
+            through a video call.
         </p>
 
         <p>
@@ -795,7 +840,11 @@ footer {
             when someone needs companionship most.
         </p>
 
-        <button class="button" onclick="showYear()">
+        <button
+            class="button"
+            type="button"
+            onclick="showYear()"
+        >
             See what all those moments became →
         </button>
 
@@ -841,18 +890,17 @@ footer {
 
         <div class="year-photo fade-in">
 
-            <!-- CORRECT ONE-YEAR PHOTO -->
+            <!-- FINAL SNAPCHAT PHOTO -->
 
             <img
-                src="IMG-20260212-WA0020.jpg"
-                alt="A memory from our first year"
+                src="Snapchat-1247899826.jpg"
+                alt="A special photograph from our first year"
             >
 
             <p>
-                And somehow, between all those calls,
-                journeys, rainy days, difficult nights and
-                moments I wished could last longer,
-                we became this. ❤️
+                And somehow, between all those calls, journeys,
+                rainy days, difficult nights and moments I wished
+                could last longer, we became this. ❤️
             </p>
 
         </div>
@@ -861,7 +909,11 @@ footer {
             And there is still one final thing waiting for you.
         </p>
 
-        <button class="button" onclick="showLetterSection()">
+        <button
+            class="button"
+            type="button"
+            onclick="showLetterSection()"
+        >
             One last thing... 💌
         </button>
 
@@ -869,7 +921,7 @@ footer {
 
 </section>
 
-<!-- FINAL LETTER -->
+<!-- LETTER -->
 
 <section id="letterSection" class="hidden">
 
@@ -885,7 +937,12 @@ footer {
             Tap the envelope to open it.
         </p>
 
-        <div class="envelope" onclick="openLetter()">
+        <div
+            class="envelope"
+            role="button"
+            tabindex="0"
+            onclick="openLetter()"
+        >
 
             <div class="envelope-heart">
                 ❤️
@@ -898,37 +955,35 @@ footer {
             <h3>Gacalisatheydi,</h3>
 
             <p>
-                When I look back at our first year,
-                I do not only remember dates.
-                I remember the ordinary nights that slowly
-                became important because they had you in them.
+                When I look back at our first year, I do not only
+                remember dates. I remember the ordinary nights
+                that slowly became important because they had
+                you in them.
             </p>
 
             <p>
-                I remember helping you with school while
-                I worked through my night shifts.
-                I remember our hands meeting for the first time
-                in a matatu towards Islii.
+                I remember helping you with school while I worked
+                through my night shifts. I remember our hands
+                meeting for the first time in a matatu towards
+                Islii.
             </p>
 
             <p>
-                I remember the rain at KICC,
-                the first hug at Bilal Hospital,
-                and the night we stayed awake talking
-                until morning.
+                I remember the rain at KICC, the first hug at
+                Bilal Hospital and the night we stayed awake
+                talking until morning.
             </p>
 
             <p>
                 Each memory may appear small from the outside,
-                but together they tell the story of how you
-                became such a meaningful part of my life.
+                but together they tell the story of how you became
+                such a meaningful part of my life.
             </p>
 
             <p>
-                Thank you for the conversations,
-                the patience, the laughter,
-                the companionship and every little moment
-                that made this year ours.
+                Thank you for the conversations, the patience,
+                the laughter, the companionship and every little
+                moment that made this year ours.
             </p>
 
             <p>
@@ -938,16 +993,14 @@ footer {
             </p>
 
             <p>
-                This first year will always be special,
-                not simply because it was our first,
-                but because it was the year in which
-                so many ordinary moments became memories
-                I never want to lose.
+                This first year will always be special, not simply
+                because it was our first, but because it was the
+                year in which so many ordinary moments became
+                memories I never want to lose.
             </p>
 
             <p>
-                Happy First Anniversary,
-                Gacalisatheydi. ❤️
+                Happy First Anniversary, Gacalisatheydi. ❤️
             </p>
 
             <p class="signature">
@@ -961,6 +1014,7 @@ footer {
 
             <button
                 class="button secondary"
+                type="button"
                 onclick="restartStory()"
             >
                 Experience it again ↻
@@ -973,158 +1027,151 @@ footer {
 </section>
 
 <footer id="footer" class="hidden">
-
-    Our First Year •
-    20.11.2025 → 20.11.2026 ❤️
-
+    Our First Year • 20.11.2025 → 20.11.2026 ❤️
 </footer>
 
 <script>
+
+/* GET IMPORTANT ELEMENTS */
+
+const nameGate = document.getElementById("nameGate");
+const nameInput = document.getElementById("nameInput");
+const nameMessage = document.getElementById("nameMessage");
+const openButton = document.getElementById("openButton");
+const welcome = document.getElementById("welcome");
+const story = document.getElementById("story");
+const yearSection = document.getElementById("yearSection");
+const letterSection = document.getElementById("letterSection");
+const finalLetter = document.getElementById("finalLetter");
+const footer = document.getElementById("footer");
 
 /* CHECK NAME */
 
 function checkName() {
 
-    const input = document
-        .getElementById("nameInput")
-        .value
+    const enteredName = nameInput.value
         .trim()
         .toLowerCase();
-
-    const message =
-        document.getElementById("nameMessage");
 
     const acceptedNames = [
         "salmatheydi",
         "gacalisatheydi"
     ];
 
-    if (acceptedNames.includes(input)) {
+    if (acceptedNames.includes(enteredName)) {
 
-        message.textContent =
+        nameMessage.textContent =
             "I knew it was you ❤️";
 
         setTimeout(function () {
 
-            document
-                .getElementById("nameGate")
-                .classList
-                .add("hidden");
+            nameGate.classList.add("hidden");
+            welcome.classList.remove("hidden");
 
-            document
-                .getElementById("welcome")
-                .classList
-                .remove("hidden");
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-            window.scrollTo(0, 0);
+        }, 600);
 
-        }, 700);
-
+        return;
     }
 
-    else if (input === "") {
+    if (enteredName === "") {
 
-        message.textContent =
+        nameMessage.textContent =
             "You have to tell me your name first 😅";
 
+        return;
     }
 
-    else {
-
-        message.textContent =
-            "Hmm... this little surprise was not made for that name 👀😂";
-
-    }
+    nameMessage.textContent =
+        "Hmm... this little surprise was not made for that name 👀😂";
 }
+
+/* OPEN BUTTON */
+
+openButton.addEventListener("click", checkName);
 
 /* ENTER KEY */
 
-document
-    .getElementById("nameInput")
-    .addEventListener(
-        "keydown",
-        function (event) {
+nameInput.addEventListener(
+    "keydown",
+    function (event) {
 
-            if (event.key === "Enter") {
-                checkName();
-            }
-
+        if (event.key === "Enter") {
+            checkName();
         }
-    );
 
-/* BEGIN */
+    }
+);
+
+/* BEGIN STORY */
 
 function beginStory() {
 
-    document
-        .getElementById("welcome")
-        .classList
-        .add("hidden");
-
-    document
-        .getElementById("story")
-        .classList
-        .remove("hidden");
+    welcome.classList.add("hidden");
+    story.classList.remove("hidden");
 
     window.scrollTo({
         top: 0,
-        behaviour: "smooth"
+        behavior: "smooth"
     });
 }
 
-/* CHAPTERS */
+/* SHOW CHAPTER */
 
-.classList.remove("hidden");
+function showChapter(number) {
+
+    const chapter =
+        document.getElementById("chapter" + number);
+
+    if (!chapter) {
+        return;
+    }
+
+    chapter.classList.remove("hidden");
     chapter.classList.add("fade-in");
 
     setTimeout(function () {
 
         chapter.scrollIntoView({
-            behaviour: "smooth",
+            behavior: "smooth",
             block: "center"
         });
 
     }, 100);
 }
 
-/* YEAR */
+/* SHOW ANNIVERSARY REVEAL */
 
 function showYear() {
 
-    const section =
-        document.getElementById(
-            "yearSection"
-        );
-
-    section.classList.remove("hidden");
-    section.classList.add("fade-in");
+    yearSection.classList.remove("hidden");
+    yearSection.classList.add("fade-in");
 
     setTimeout(function () {
 
-        section.scrollIntoView({
-            behaviour: "smooth",
-            block: "center"
+        yearSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
 
     }, 100);
 }
 
-/* LETTER SECTION */
+/* SHOW LETTER SECTION */
 
 function showLetterSection() {
 
-    const section =
-        document.getElementById(
-            "letterSection"
-        );
-
-    section.classList.remove("hidden");
-    section.classList.add("fade-in");
+    letterSection.classList.remove("hidden");
+    letterSection.classList.add("fade-in");
 
     setTimeout(function () {
 
-        section.scrollIntoView({
-            behaviour: "smooth",
+        letterSection.scrollIntoView({
+            behavior: "smooth",
             block: "start"
         });
 
@@ -1135,66 +1182,40 @@ function showLetterSection() {
 
 function openLetter() {
 
-    const letter =
-        document.getElementById(
-            "finalLetter"
-        );
-
-    letter.classList.remove("hidden");
-    letter.classList.add("fade-in");
-
-    document
-        .getElementById("footer")
-        .classList
-        .remove("hidden");
+    finalLetter.classList.remove("hidden");
+    finalLetter.classList.add("fade-in");
+    footer.classList.remove("hidden");
 
     setTimeout(function () {
 
-        letter.scrollIntoView({
-            behaviour: "smooth",
+        finalLetter.scrollIntoView({
+            behavior: "smooth",
             block: "start"
         });
 
-    }, 200);
+    }, 150);
 }
 
-/* RESTART */
+/* RESTART EXPERIENCE */
 
 function restartStory() {
 
-    document
-        .getElementById("story")
-        .classList
-        .add("hidden");
+    story.classList.add("hidden");
+    yearSection.classList.add("hidden");
+    letterSection.classList.add("hidden");
+    finalLetter.classList.add("hidden");
+    footer.classList.add("hidden");
 
-    document
-        .getElementById("yearSection")
-        .classList
-        .add("hidden");
+    document.getElementById("chapter2").classList.add("hidden");
+    document.getElementById("chapter3").classList.add("hidden");
+    document.getElementById("chapter4").classList.add("hidden");
+    document.getElementById("chapter5").classList.add("hidden");
 
-    document
-        .getElementById("letterSection")
-        .classList
-        .add("hidden");
-
-    document
-        .getElementById("finalLetter")
-        .classList
-        .add("hidden");
-
-    document
-        .getElementById("footer")
-        .classList
-        .add("hidden");
-
-    document
-        .getElementById("welcome")
-        .classList
-        .remove("hidden");
+    welcome.classList.remove("hidden");
 
     window.scrollTo({
         top: 0,
-        behaviour: "smooth"
+        behavior: "smooth"
     });
 }
 
