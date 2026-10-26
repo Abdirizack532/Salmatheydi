@@ -1,1 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our First Year ❤️</title>
+
+<style>
+:root {
+    --midnight: #090812;
+    --navy: #111126;
+    --burgundy: #651f3b;
+    --rose: #dc7c9b;
+    --gold: #f1d18a;
+    --cream: #fff8ec;
+    --soft-white: #f8f2f4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(101,31,59,0.30), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(79,55,120,0.22), transparent 35%),
+        var(--midnight);
+    color: var(--soft-white);
+    font-family: Arial, sans-serif;
+}
+
+/* Floating background lights */
+
+.light {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.45;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+}
+
+.light:nth-child(1) {
+    left: 10%;
+    bottom: -20px;
+    animation-duration: 12s;
+}
+
+.light:nth-child(2) {
+    left: 28%;
+    bottom: -40px;
+    animation-duration: 16s;
+    animation-delay: 2s;
+}
+
+.light:nth-child(3) {
+    left: 52%;
+    bottom: -30px;
+    animation-duration: 14s;
+    animation-delay: 4s;
+}
+
+.light:nth-child(4) {
+    left: 74%;
+    bottom: -50px;
+    animation-duration: 18s;
+    animation-delay: 1s;
+}
+
+.light:nth-child(5) {
+    left: 90%;
+    bottom: -30px;
+    animation-duration: 13s;
+    animation-delay: 5s;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Shared layout */
+
+.screen {
+    min-height: 100vh;
+    padding: 45px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Name gate */
+
+#nameGate {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background:
+        radial-gradient(circle at top, rgba(101,31,59,0.45), transparent 42%),
+        linear-gradient(145deg, #090812, #171126);
+}
+
+.gate-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 45px 28px;
+    border: 1px solid rgba(241,209,138,0.25);
+    border-radius: 28px;
+    background: rgba(255,255,255,0.055);
+    box-shadow: 0 25px 80px rgba(0,0,0,0.45);
+    backdrop-filter: blur(14px);
+    text-align: center;
+}
+
+.tiny-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.gate-card h1 {
+    margin: 18px 0 12px;
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 8vw, 62px);
+    color: var(--cream);
+}
+
+.gate-card p {
+    color: #d9ced5;
+    line-height: 1.7;
+}
+
+.name-input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 17px 18px;
+    border: 1px solid rgba(241,209,138,0.35);
+    border-radius: 14px;
+    outline: none;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 17px;
+    text-align: center;
+}
+
+.name-input::placeholder {
+    color: #ae9ea7;
+}
+
+.message {
+    min-height: 24px;
+    margin: 14px 0 0;
+    color: #ffabc4;
+}
+
+/* Buttons */
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 25px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--burgundy), #9c3e62);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(101,31,59,0.38);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.button:hover,
+.button:active {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(101,31,59,0.50);
+}
+
+.button.secondary {
+    background: transparent;
+    border: 1px solid rgba(241,209,138,0.45);
+    color: var(--gold);
+}
+
+/* Welcome */
+
+#welcome {
+    background:
+        linear-gradient(rgba(9,8,18,0.25), rgba(9,8,18,0.85)),
+        radial-gradient(circle at centre, #35203d, var(--midnight));
+}
+
+#welcome h1 {
+    margin: 10px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(50px, 10vw, 88px);
+    color: var(--gold);
+}
+
+#welcome .opening {
+    max-width: 720px;
+    margin: 25px auto;
+    font-family: Georgia, serif;
+    font-size: clamp(20px, 4vw, 28px);
+    line-height: 1.8;
+    color: var(--cream);
+}
+
+.date {
+    color: var(--rose);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Story */
+
+#story {
+    position: relative;
+    padding: 70px 7%;
+}
+
+.story-heading {
+    max-width: 800px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.story-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 7vw, 62px);
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.chapter {
+    max-width: 760px;
+    margin: 30px auto;
+    padding: 35px 28px;
+    border-left: 2px solid var(--gold);
+    border-radius: 0 24px 24px 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.075),
+        rgba(255,255,255,0.025)
+    );
+    box-shadow: 0 18px 50px rgba(0,0,0,0.24);
+}
+
+.chapter-number {
+    color: var(--rose);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.chapter h3 {
+    margin: 12px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(29px, 5vw, 42px);
+    color: var(--cream);
+}
+
+.chapter p {
+    color: #ded3d9;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+/* Year counter */
+
+#yearSection {
+    padding: 90px 7%;
+    text-align: center;
+    background:
+        radial-gradient(circle, rgba(101,31,59,0.32), transparent 60%);
+}
+
+#yearSection h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 7vw, 65px);
+    color: var(--gold);
+}
+
+.counters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(130px, 1fr));
+    gap: 16px;
+    max-width: 680px;
+    margin: 40px auto;
+}
+
+.counter {
+    padding: 26px 15px;
+    border: 1px solid rgba(241,209,138,0.20);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+}
+
+.counter strong {
+    display: block;
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 36px;
+}
+
+.counter span {
+    color: #cfc3ca;
+}
+
+/* Envelope */
+
+#letterSection {
+    padding: 90px 7%;
+    text-align: center;
+}
+
+#letterSection h2 {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 7vw, 62px);
+}
+
+.envelope {
+    width: 240px;
+    height: 155px;
+    margin: 45px auto 20px;
+    position: relative;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #9a4665, #5f1f39);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.38);
+    cursor: pointer;
+    transition: transform 0.35s ease;
+}
+
+.envelope:hover,
+.envelope:active {
+    transform: scale(1.04);
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(0 0, 50% 62%, 100% 0);
+    background: #b75c7c;
+    border-radius: 8px 8px 0 0;
+}
+
+.envelope-heart {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+    font-size: 43px;
+}
+
+.letter {
+    max-width: 760px;
+    margin: 40px auto 0;
+    padding: 38px 28px;
+    border-radius: 24px;
+    background: var(--cream);
+    color: #35242e;
+    text-align: left;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.38);
+}
+
+.letter h3 {
+    font-family: Georgia, serif;
+    color: var(--burgundy);
+    font-size: 34px;
+}
+
+.letter p {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.signature {
+    margin-top: 30px;
+    color: var(--burgundy);
+    font-weight: bold;
+}
+
+footer {
+    padding: 35px 7%;
+    text-align: center;
+    color: #a99ba4;
+}
+
+@media (min-width: 700px) {
+    .counters {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .chapter {
+        padding: 45px 42px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
+
+<!-- NAME ENTRY SCREEN -->
+
+<section id="nameGate" class="screen">
+
+    <div class="gate-card fade-in">
+
+        <div class="tiny-label">A little surprise awaits</div>
+
+        <h1>Hey there... ❤️</h1>
+
+        <p>
+            Someone made something especially for one person.
+            Before opening it, tell me your name.
+        </p>
+
+        <input
+            id="nameInput"
+            class="name-input"
+            type="text"
+            placeholder="Type your name..."
+            autocomplete="off"
+        >
+
+        <button class="button" onclick="checkName()">
+            Open it ✨
+        </button>
+
+        <div id="nameMessage" class="message"></div>
+
+    </div>
+
+</section>
+
+<!-- WELCOME SCREEN -->
+
+<section id="welcome" class="screen hidden">
+
+    <div class="inner fade-in">
+
+        <div class="tiny-label">This was made for you</div>
+
+        <h1>Hi, Gacalisatheydi ❤️</h1>
+
+        <p class="opening">
+            Somewhere between my night shifts and your late-night
+            studying, between ordinary calls that lasted longer than
+            planned and moments we never knew would become memories,
+            you became one of the most beautiful parts of my life.
+        </p>
+
+        <p class="date">
+            20 November 2025 → 20 November 2026
+        </p>
+
+        <p>
+            There are 365 days hidden behind this little button.
+        </p>
+
+        <button class="button" onclick="beginStory()">
+            Begin Our Story →
+        </button>
+
+    </div>
+
+</section>
+
+<!-- STORY -->
+
+<main id="story" class="hidden">
+
+    <div class="story-heading fade-in">
+
+        <div class="tiny-label">Our First Year</div>
+
+        <h2>The moments that became us</h2>
+
+        <p>
+            Not every beautiful story begins with a grand event.
+            Sometimes it begins with ordinary nights that slowly
+            become impossible to forget.
+        </p>
+
+    </div>
+
+    <article id="chapter1" class="chapter fade-in">
+
+        <div class="chapter-number">Chapter 01</div>
+
+        <h3>The Nights That Started Everything 🌙</h3>
+
+        <p>
+            I was working night shifts while you were completing your
+            final semester. We had studied the same course, but you were
+            six months behind me, so our conversations often wandered
+            between schoolwork, advice, laughter and life.
+        </p>
+
+        <p>
+            Night after night, we talked. What began as ordinary
+            conversations slowly became the part of my shifts that
+            I looked forward to most.
+        </p>
+
+        <button class="button" onclick="showChapter(2)">
+            Keep going →
+        </button>
+
+    </article>
+
+    <article id="chapter2" class="chapter hidden">
+
+        <div class="chapter-number">Chapter 02</div>
+
+        <h3>The First Time Our Hands Met 🤍</h3>
+
+        <p>
+            You travelled from Machakos, and I waited for you at the
+            stage in town. From there, we boarded a matatu towards Islii,
+            where you were staying with a relative and where I was also
+            working at the time.
+        </p>
+
+        <p>
+            You became nauseous during the journey. Somewhere inside
+            that ordinary matatu, our hands met for the first time.
+            The world outside carried on normally, but to me, something
+            quietly unforgettable had happened.
+        </p>
+
+        <button class="button" onclick="showChapter(3)">
+            Continue our story →
+        </button>
+
+    </article>
+
+    <article id="chapter3" class="chapter hidden">
+
+        <div class="chapter-number">Chapter 03</div>
+
+        <h3>Nairobi Gave Us Rain 🌧️</h3>
+
+        <p>
+            We met at KICC and spent precious time together. Nairobi
+            gave that day a rainy sky, but the rain only made the memory
+            feel more cinematic.
+        </p>
+
+        <p>
+            It became one of those moments that stays alive in small
+            details: the place, the weather and the happiness of simply
+            being together.
+        </p>
+
+        <button class="button" onclick="showChapter(4)">
+            One more memory →
+        </button>
+
+    </article>
+
+    <article id="chapter4" class="chapter hidden">
+
+        <div class="chapter-number">Chapter 04</div>
+
+        <h3>The Hug I Wanted to Pause 🫂</h3>
+
+        <p>
+            You visited me at my workplace at Bilal Hospital, and that
+            visit gave us our first hug.
+        </p>
+
+        <p>
+            It was a simple moment, but I wanted time to slow down.
+            For those few seconds, I wished the world would pause and
+            let me remain there just a little longer.
+        </p>
+
+        <button class="button" onclick="showChapter(5)">
+            Until morning →
+        </button>
+
+    </article>
+
+    <article id="chapter5" class="chapter hidden">
+
+        <div class="chapter-number">Chapter 05</div>
+
+        <h3>Until Morning 🌙</h3>
+
+        <p>
+            One night, I was working another night shift while you were
+            going through a difficult evening. I did not want you to
+            feel alone, so we stayed together through a video call.
+        </p>
+
+        <p>
+            We talked for hours until morning arrived. That night
+            reminded me that love is sometimes simply choosing to stay,
+            listen and be present when someone needs companionship most.
+        </p>
+
+        <button class="button" onclick="showYear()">
+            See what all those moments became →
+        </button>
+
+    </article>
+
+</main>
+
+<!-- YEAR SECTION -->
+
+<section id="yearSection" class="hidden">
+
+    <div class="fade-in">
+
+        <div class="tiny-label">And somehow...</div>
+
+        <h2>A whole year happened ❤️</h2>
+
+        <div class="counters">
+
+            <div class="counter">
+                <strong>365</strong>
+                <span>Days</span>
+            </div>
+
+            <div class="counter">
+                <strong>12</strong>
+                <span>Months</span>
+            </div>
+
+            <div class="counter">
+                <strong>1</strong>
+                <span>First anniversary</span>
+            </div>
+
+            <div class="counter">
+                <strong>1</strong>
+                <span>Gacalisatheydi</span>
+            </div>
+
+        </div>
+
+        <p>
+            And there is still one final thing waiting for you.
+        </p>
+
+        <button class="button" onclick="showLetterSection()">
+            One last thing... 💌
+        </button>
+
+    </div>
+
+</section>
+
+<!-- LETTER SECTION -->
+
+<section id="letterSection" class="hidden">
+
+    <div class="fade-in">
+
+        <div class="tiny-label">Made only for you</div>
+
+        <h2>A letter for Gacalisatheydi</h2>
+
+        <p>Tap the envelope to open it.</p>
+
+        <div class="envelope" onclick="openLetter()">
+            <div class="envelope-heart">❤️</div>
+        </div>
+
+        <div id="finalLetter" class="letter hidden">
+
+            <h3>Gacalisatheydi,</h3>
+
+            <p>
+                When I look back at our first year, I do not only remember
+                dates. I remember the ordinary nights that slowly became
+                important because they had you in them.
+            </p>
+
+            <p>
+                I remember helping you with school while I worked through
+                my night shifts. I remember our hands meeting for the first
+                time in a matatu towards Islii. I remember the rain at KICC,
+                the first hug at Bilal Hospital and the night we stayed awake
+                talking until morning.
+            </p>
+
+            <p>
+                Each memory may appear small from the outside, but together
+                they tell the story of how you became such a meaningful part
+                of my life.
+            </p>
+
+            <p>
+                Thank you for the conversations, the patience, the laughter,
+                the companionship and every little moment that made this year
+                ours.
+            </p>
+
+            <p>
+                If our first year gave me memories like these, I cannot wait
+                to discover what Allah has written into the chapters still
+                ahead of us.
+            </p>
+
+            <p>
+                Happy First Anniversary, Gacalisatheydi. ❤️
+            </p>
+
+            <p class="signature">
+                With love,<br>
+                Your night-shift companion 🌙
+            </p>
+
+            <p>
+                <strong>20 November 2026</strong>
+            </p>
+
+            <button class="button secondary" onclick="restartStory()">
+                Experience it again ↻
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer id="footer" class="hidden">
+    Our First Year • 20.11.2025 → 20.11.2026 ❤️
+</footer>
+
+<script>
+function checkName() {
+    const input = document
+        .getElementById("nameInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const message = document.getElementById("nameMessage");
+
+    const acceptedNames = [
+        "salma",
+        "gacalisatheydi",
+        "gacalisahaydi",
+        "gacaliso"
+    ];
+
+    if (acceptedNames.includes(input)) {
+        message.textContent = "I knew it was you ❤️";
+
+        setTimeout(() => {
+            document.getElementById("nameGate").classList.add("hidden");
+            document.getElementById("welcome").classList.remove("hidden");
+            window.scrollTo(0, 0);
+        }, 700);
+
+    } else if (input === "") {
+        message.textContent = "You have to tell me your name first 😅";
+
+    } else {
+        message.textContent =
+            "Hmm... this little surprise was not made for that name 👀😂";
+    }
+}
+
+document
+    .getElementById("nameInput")
+    .addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkName();
+        }
+    });
+
+function beginStory() {
+    document.getElementById("welcome").classList.add("hidden");
+    document.getElementById("story").classList.remove("hidden");
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function showChapter(number) {
+    const chapter = document.getElementById("chapter" + number);
+
+    chapter.classList.remove("hidden");
+    chapter.classList.add("fade-in");
+
+    setTimeout(() => {
+        chapter.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }, 100);
+}
+
+function showYear() {
+    const section = document.getElementById("yearSection");
+
+    section.classList.remove("hidden");
+    section.classList.add("fade-in");
+
+    setTimeout(() => {
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }, 100);
+}
+
+function showLetterSection() {
+    const section = document.getElementById("letterSection");
+
+    section.classList.remove("hidden");
+    section.classList.add("fade-in");
+
+    setTimeout(() => {
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }, 100);
+}
+
+function openLetter() {
+    const letter = document.getElementById("finalLetter");
+
+    letter.classList.remove("hidden");
+    letter.classList.add("fade-in");
+
+    document.getElementById("footer").classList.remove("hidden");
+
+    setTimeout(() => {
+        letter.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }, 200);
+}
+
+function restartStory() {
+    document.getElementById("story").classList.add("hidden");
+    document.getElementById("yearSection").classList.add("hidden");
+    document.getElementById("letterSection").classList.add("hidden");
+    document.getElementById("finalLetter").classList.add("hidden");
+    document.getElementById("footer").classList.add("hidden");
+
+    document.getElementById("welcome").classList.remove("hidden");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
+</body>
+</html>
 
