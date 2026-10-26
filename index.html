@@ -9,7 +9,6 @@
 <style>
 :root {
     --midnight: #080711;
-    --navy: #151126;
     --burgundy: #6d213f;
     --rose: #dc7899;
     --gold: #f2d28c;
@@ -326,6 +325,42 @@ body {
     font-size: 17px;
 }
 
+/* MEMORY PHOTOS */
+
+.memory-photo {
+    max-width: 680px;
+    margin: 32px auto 10px;
+    padding: 10px;
+    border: 1px solid rgba(242, 210, 140, 0.22);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.memory-photo img {
+    display: block;
+    width: 100%;
+    max-height: 620px;
+    object-fit: cover;
+    border-radius: 18px;
+    transition: transform 0.8s ease;
+}
+
+.memory-photo:hover img {
+    transform: scale(1.025);
+}
+
+.memory-caption {
+    padding: 22px 14px 12px;
+    color: #ded3d9;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.8;
+    text-align: center;
+}
+
 /* YEAR REVEAL */
 
 #yearSection {
@@ -369,6 +404,39 @@ body {
 
 .counter span {
     color: #cfc3ca;
+}
+
+.year-photo {
+    max-width: 720px;
+    margin: 45px auto 25px;
+    padding: 10px;
+    border: 1px solid rgba(242, 210, 140, 0.28);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 28px 75px rgba(0, 0, 0, 0.42);
+    overflow: hidden;
+}
+
+.year-photo img {
+    display: block;
+    width: 100%;
+    max-height: 720px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.8s ease;
+}
+
+.year-photo:hover img {
+    transform: scale(1.025);
+}
+
+.year-photo p {
+    padding: 22px 15px 14px;
+    margin: 0;
+    color: var(--cream);
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.7;
 }
 
 /* ENVELOPE AND LETTER */
@@ -620,6 +688,33 @@ footer {
             something quietly unforgettable had happened.
         </p>
 
+        <div class="memory-photo fade-in">
+
+            <img
+                src="IMG-20260212-WA0020.jpg"
+                alt="Two hands forming a heart"
+            >
+
+            <div class="memory-caption">
+
+                These are not the hands from that first day,
+                but they remind me of them.
+
+                <br><br>
+
+                Of that matatu to Islii. Of you feeling unwell.
+                Of reaching for each other for the first time.
+
+                <br><br>
+
+                I did not know then how many more times I would
+                get to hold your hand, but I am grateful that
+                first one was not the last. ❤️
+
+            </div>
+
+        </div>
+
         <button class="button" onclick="showChapter(3)">
             Continue our story →
         </button>
@@ -643,9 +738,9 @@ footer {
         </p>
 
         <p>
-            It became one of those moments that stays alive in small
-            details: the place, the weather and the happiness of
-            simply being together.
+            It became one of those moments that stays alive in
+            small details: the place, the weather and the happiness
+            of simply being together.
         </p>
 
         <button class="button" onclick="showChapter(4)">
@@ -749,6 +844,21 @@ footer {
 
         </div>
 
+        <div class="year-photo fade-in">
+
+            <img
+                src="Snapchat-1247899826.jpg"
+                alt="A special memory from our first year"
+            >
+
+            <p>
+                And somehow, between all those calls, journeys,
+                rainy days, difficult nights and moments I wished
+                could last longer, we became this. ❤️
+            </p>
+
+        </div>
+
         <p>
             And there is still one final thing waiting for you.
         </p>
@@ -824,9 +934,9 @@ footer {
 
             <p>
                 This first year will always be special, not simply
-                because it was our first, but because it was the year
-                in which so many ordinary moments became memories
-                I never want to lose.
+                because it was our first, but because it was the
+                year in which so many ordinary moments became
+                memories I never want to lose.
             </p>
 
             <p>
@@ -967,7 +1077,7 @@ function showChapter(number) {
     }, 100);
 }
 
-/* SHOW THE ANNIVERSARY COUNTERS */
+/* SHOW THE ANNIVERSARY REVEAL */
 
 function showYear() {
 
