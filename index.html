@@ -29,6 +29,8 @@ body {
     margin: 0;
     min-height: 100vh;
     overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    color: var(--white);
     background:
         radial-gradient(
             circle at 20% 20%,
@@ -41,8 +43,6 @@ body {
             transparent 35%
         ),
         var(--midnight);
-    color: var(--white);
-    font-family: Arial, sans-serif;
 }
 
 .hidden {
@@ -145,7 +145,7 @@ body {
     font-size: 12px;
 }
 
-/* ENTRANCE */
+/* NAME-ENTRY SCREEN */
 
 #nameGate {
     position: fixed;
@@ -326,33 +326,34 @@ body {
     line-height: 1.9;
 }
 
-/* HANDS PHOTO */
+/* PHOTOS */
 
-.memory-photo {
-    max-width: 680px;
-    margin: 32px auto 10px;
+.photo-frame {
+    max-width: 700px;
+    margin: 32px auto 15px;
     padding: 10px;
-    border: 1px solid rgba(242, 210, 140, 0.22);
+    border: 1px solid rgba(242, 210, 140, 0.25);
     border-radius: 25px;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
     overflow: hidden;
 }
 
-.memory-photo img {
+.photo-frame img {
     display: block;
     width: 100%;
-    max-height: 620px;
+    max-height: 720px;
     object-fit: cover;
     border-radius: 18px;
     transition: transform 0.8s ease;
 }
 
-.memory-photo:hover img {
+.photo-frame:hover img {
     transform: scale(1.025);
 }
 
-.memory-caption {
+.photo-caption {
+    margin: 0;
     padding: 22px 14px 12px;
     color: #ded3d9;
     font-family: Georgia, serif;
@@ -362,7 +363,7 @@ body {
     text-align: center;
 }
 
-/* YEAR REVEAL */
+/* ANNIVERSARY REVEAL */
 
 #yearSection {
     padding: 95px 7%;
@@ -407,39 +408,15 @@ body {
     color: #cfc3ca;
 }
 
-/* FINAL SNAP PHOTO */
-
-.year-photo {
+.final-photo {
     max-width: 720px;
     margin: 45px auto 25px;
-    padding: 10px;
-    border: 1px solid rgba(242, 210, 140, 0.28);
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 28px 75px rgba(0, 0, 0, 0.42);
-    overflow: hidden;
 }
 
-.year-photo img {
-    display: block;
-    width: 100%;
-    max-height: 720px;
-    object-fit: cover;
-    border-radius: 20px;
-    transition: transform 0.8s ease;
-}
-
-.year-photo:hover img {
-    transform: scale(1.025);
-}
-
-.year-photo p {
-    margin: 0;
-    padding: 22px 15px 14px;
+.final-photo .photo-caption {
     color: var(--cream);
-    font-family: Georgia, serif;
     font-size: 19px;
-    line-height: 1.7;
+    font-style: normal;
 }
 
 /* LETTER */
@@ -553,7 +530,10 @@ footer {
 
 <section id="nameGate" class="screen">
 
-    <div class="gate-card fade-in">
+    <form
+        id="nameForm"
+        class="gate-card fade-in"
+    >
 
         <div class="tiny-label">
             A little surprise awaits
@@ -575,16 +555,15 @@ footer {
         >
 
         <button
-            id="openButton"
             class="button"
-            type="button"
+            type="submit"
         >
             Open it ✨
         </button>
 
         <div id="nameMessage" class="message"></div>
 
-    </div>
+    </form>
 
 </section>
 
@@ -647,6 +626,8 @@ footer {
 
     </div>
 
+    <!-- CHAPTER 1 -->
+
     <article id="chapter1" class="chapter fade-in">
 
         <div class="chapter-number">
@@ -679,6 +660,8 @@ footer {
 
     </article>
 
+    <!-- CHAPTER 2 -->
+
     <article id="chapter2" class="chapter hidden">
 
         <div class="chapter-number">
@@ -705,16 +688,16 @@ footer {
             something quietly unforgettable had happened.
         </p>
 
-        <div class="memory-photo fade-in">
+        <div class="photo-frame">
 
-            <!-- HOLDING-HANDS PHOTO -->
+            <!-- CHAPTER 2: HOLDING-HANDS IMAGE -->
 
             <img
-                src="Snapchat-1247899826.jpg"
+                src="IMG-20260212-WA0020.jpg"
                 alt="A recent photograph of our hands"
             >
 
-            <div class="memory-caption">
+            <p class="photo-caption">
 
                 These are not the hands from that first day,
                 but they remind me of them.
@@ -731,7 +714,7 @@ footer {
                 get to hold your hand, but I am grateful that
                 first one was not the last. ❤️
 
-            </div>
+            </p>
 
         </div>
 
@@ -745,6 +728,8 @@ footer {
 
     </article>
 
+    <!-- CHAPTER 3 -->
+
     <article id="chapter3" class="chapter hidden">
 
         <div class="chapter-number">
@@ -755,14 +740,14 @@ footer {
 
         <p>
             We met at KICC and spent precious time together.
-            Nairobi gave that day a rainy sky, but the rain
-            only made the memory feel more cinematic.
+            Nairobi gave that day a rainy sky, but the rain only
+            made the memory feel more cinematic.
         </p>
 
         <p>
             It became one of those moments that stays alive
-            in small details: the place, the weather and the
-            happiness of simply being together.
+            in small details: the place, the weather and
+            the happiness of simply being together.
         </p>
 
         <button
@@ -774,6 +759,8 @@ footer {
         </button>
 
     </article>
+
+    <!-- CHAPTER 4 -->
 
     <article id="chapter4" class="chapter hidden">
 
@@ -804,6 +791,8 @@ footer {
 
     </article>
 
+    <!-- CHAPTER 5 -->
+
     <article id="chapter5" class="chapter hidden">
 
         <div class="chapter-number">
@@ -821,9 +810,9 @@ footer {
 
         <p>
             We talked for hours until morning arrived.
-            That night reminded me that love is sometimes
-            simply choosing to stay, listen and be present
-            when someone needs companionship most.
+            That night reminded me that love is sometimes simply
+            choosing to stay, listen and be present when someone
+            needs companionship most.
         </p>
 
         <button
@@ -874,16 +863,16 @@ footer {
 
         </div>
 
-        <div class="year-photo fade-in">
+        <div class="photo-frame final-photo">
 
-            <!-- FINAL SNAP PHOTO -->
+            <!-- FINAL REVEAL: SNAPCHAT IMAGE -->
 
             <img
-                src="IMG-20260212-WA0020.jpg"
+                src="Snapchat-1247899826.jpg"
                 alt="A special photograph from our first year"
             >
 
-            <p>
+            <p class="photo-caption">
                 And somehow, between all those calls, journeys,
                 rainy days, difficult nights and moments I wished
                 could last longer, we became this. ❤️
@@ -925,8 +914,6 @@ footer {
 
         <div
             class="envelope"
-            role="button"
-            tabindex="0"
             onclick="openLetter()"
         >
 
@@ -950,8 +937,7 @@ footer {
             <p>
                 I remember helping you with school while I worked
                 through my night shifts. I remember our hands
-                meeting for the first time in a matatu towards
-                Islii.
+                meeting for the first time in a matatu towards Islii.
             </p>
 
             <p>
@@ -980,8 +966,8 @@ footer {
 
             <p>
                 This first year will always be special, not simply
-                because it was our first, but because it was the
-                year in which so many ordinary moments became
+                because it was our first, but because it was
+                the year in which so many ordinary moments became
                 memories I never want to lose.
             </p>
 
@@ -1018,72 +1004,87 @@ footer {
 
 <script>
 
-const nameGate = document.getElementById("nameGate");
-const nameInput = document.getElementById("nameInput");
-const nameMessage = document.getElementById("nameMessage");
-const openButton = document.getElementById("openButton");
-const welcome = document.getElementById("welcome");
-const story = document.getElementById("story");
-const yearSection = document.getElementById("yearSection");
-const letterSection = document.getElementById("letterSection");
-const finalLetter = document.getElementById("finalLetter");
-const footer = document.getElementById("footer");
+const nameGate =
+    document.getElementById("nameGate");
 
-function checkName() {
+const nameForm =
+    document.getElementById("nameForm");
 
-    const enteredName = nameInput.value
-        .trim()
-        .toLowerCase();
+const nameInput =
+    document.getElementById("nameInput");
 
-    const acceptedNames = [
-        "salmatheydi",
-        "gacalisatheydi"
-    ];
+const nameMessage =
+    document.getElementById("nameMessage");
 
-    if (acceptedNames.includes(enteredName)) {
+const welcome =
+    document.getElementById("welcome");
 
-        nameMessage.textContent =
-            "I knew it was you ❤️";
+const story =
+    document.getElementById("story");
 
-        setTimeout(function () {
+const yearSection =
+    document.getElementById("yearSection");
 
-            nameGate.classList.add("hidden");
-            welcome.classList.remove("hidden");
+const letterSection =
+    document.getElementById("letterSection");
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+const finalLetter =
+    document.getElementById("finalLetter");
 
-        }, 600);
+const footer =
+    document.getElementById("footer");
 
-        return;
-    }
+/* NAME ENTRY */
 
-    if (enteredName === "") {
-
-        nameMessage.textContent =
-            "You have to tell me your name first 😅";
-
-        return;
-    }
-
-    nameMessage.textContent =
-        "Hmm... this little surprise was not made for that name 👀😂";
-}
-
-openButton.addEventListener("click", checkName);
-
-nameInput.addEventListener(
-    "keydown",
+nameForm.addEventListener(
+    "submit",
     function (event) {
 
-        if (event.key === "Enter") {
-            checkName();
+        event.preventDefault();
+
+        const enteredName = nameInput.value
+            .trim()
+            .toLowerCase();
+
+        const acceptedNames = [
+            "salmatheydi",
+            "gacalisatheydi"
+        ];
+
+        if (acceptedNames.includes(enteredName)) {
+
+            nameMessage.textContent =
+                "I knew it was you ❤️";
+
+            setTimeout(function () {
+
+                nameGate.classList.add("hidden");
+                welcome.classList.remove("hidden");
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }, 600);
+
+            return;
         }
 
+        if (enteredName === "") {
+
+            nameMessage.textContent =
+                "You have to tell me your name first 😅";
+
+            return;
+        }
+
+        nameMessage.textContent =
+            "Hmm... this little surprise was not made for that name 👀😂";
     }
 );
+
+/* BEGIN STORY */
 
 function beginStory() {
 
@@ -1095,6 +1096,8 @@ function beginStory() {
         behavior: "smooth"
     });
 }
+
+/* SHOW CHAPTER */
 
 function showChapter(number) {
 
@@ -1118,6 +1121,8 @@ function showChapter(number) {
     }, 100);
 }
 
+/* SHOW ANNIVERSARY REVEAL */
+
 function showYear() {
 
     yearSection.classList.remove("hidden");
@@ -1132,6 +1137,8 @@ function showYear() {
 
     }, 100);
 }
+
+/* SHOW LETTER */
 
 function showLetterSection() {
 
@@ -1148,6 +1155,8 @@ function showLetterSection() {
     }, 100);
 }
 
+/* OPEN LETTER */
+
 function openLetter() {
 
     finalLetter.classList.remove("hidden");
@@ -1163,6 +1172,8 @@ function openLetter() {
 
     }, 150);
 }
+
+/* RESTART */
 
 function restartStory() {
 
