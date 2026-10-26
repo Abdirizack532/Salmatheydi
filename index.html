@@ -21,7 +21,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behaviour: smooth;
 }
 
 body {
@@ -29,16 +29,10 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(109, 33, 63, 0.32),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(80, 55, 120, 0.22),
-            transparent 35%
-        ),
+        radial-gradient(circle at 20% 20%,
+        rgba(109,33,63,0.32), transparent 35%),
+        radial-gradient(circle at 80% 70%,
+        rgba(80,55,120,0.22), transparent 35%),
         var(--midnight);
     color: var(--soft-white);
     font-family: Arial, sans-serif;
@@ -103,7 +97,7 @@ body {
     }
 }
 
-/* GENERAL LAYOUT */
+/* GENERAL */
 
 .screen {
     min-height: 100vh;
@@ -146,18 +140,15 @@ body {
     font-size: 12px;
 }
 
-/* NAME-ENTRY SCREEN */
+/* NAME ENTRY */
 
 #nameGate {
     position: fixed;
     inset: 0;
     z-index: 100;
     background:
-        radial-gradient(
-            circle at top,
-            rgba(109, 33, 63, 0.48),
-            transparent 43%
-        ),
+        radial-gradient(circle at top,
+        rgba(109,33,63,0.48), transparent 43%),
         linear-gradient(145deg, #080711, #181127);
 }
 
@@ -165,10 +156,10 @@ body {
     width: 100%;
     max-width: 520px;
     padding: 45px 28px;
-    border: 1px solid rgba(242, 210, 140, 0.25);
+    border: 1px solid rgba(242,210,140,0.25);
     border-radius: 28px;
-    background: rgba(255, 255, 255, 0.055);
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+    background: rgba(255,255,255,0.055);
+    box-shadow: 0 25px 80px rgba(0,0,0,0.45);
     backdrop-filter: blur(14px);
     text-align: center;
 }
@@ -189,10 +180,10 @@ body {
     width: 100%;
     margin-top: 20px;
     padding: 17px 18px;
-    border: 1px solid rgba(242, 210, 140, 0.35);
+    border: 1px solid rgba(242,210,140,0.35);
     border-radius: 14px;
     outline: none;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.08);
     color: white;
     font-size: 17px;
     text-align: center;
@@ -206,7 +197,6 @@ body {
     min-height: 26px;
     margin-top: 15px;
     color: #ffabc4;
-    line-height: 1.5;
 }
 
 /* BUTTONS */
@@ -217,27 +207,27 @@ body {
     padding: 15px 25px;
     border: 0;
     border-radius: 999px;
-    background: linear-gradient(135deg, var(--burgundy), #a04468);
+    background: linear-gradient(
+        135deg,
+        var(--burgundy),
+        #a04468
+    );
     color: white;
     font-size: 16px;
     font-weight: bold;
-    text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 12px 30px rgba(109, 33, 63, 0.38);
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    box-shadow: 0 12px 30px rgba(109,33,63,0.38);
+    transition: 0.25s ease;
 }
 
 .button:hover,
 .button:active {
     transform: translateY(-2px);
-    box-shadow: 0 16px 36px rgba(109, 33, 63, 0.5);
 }
 
 .button.secondary {
     background: transparent;
-    border: 1px solid rgba(109, 33, 63, 0.45);
+    border: 1px solid rgba(109,33,63,0.45);
     color: var(--burgundy);
 }
 
@@ -268,7 +258,6 @@ body {
 /* STORY */
 
 #story {
-    position: relative;
     padding: 75px 7%;
 }
 
@@ -279,7 +268,6 @@ body {
 }
 
 .story-heading h2 {
-    margin-bottom: 10px;
     font-family: Georgia, serif;
     font-size: clamp(38px, 7vw, 62px);
     color: var(--gold);
@@ -298,10 +286,10 @@ body {
     border-radius: 0 24px 24px 0;
     background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.075),
-        rgba(255, 255, 255, 0.025)
+        rgba(255,255,255,0.075),
+        rgba(255,255,255,0.025)
     );
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.24);
 }
 
 .chapter-number {
@@ -325,16 +313,16 @@ body {
     font-size: 17px;
 }
 
-/* MEMORY PHOTOS */
+/* MEMORY PHOTO */
 
 .memory-photo {
     max-width: 680px;
     margin: 32px auto 10px;
     padding: 10px;
-    border: 1px solid rgba(242, 210, 140, 0.22);
+    border: 1px solid rgba(242,210,140,0.22);
     border-radius: 25px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 22px 60px rgba(0,0,0,0.35);
     overflow: hidden;
 }
 
@@ -368,10 +356,9 @@ body {
     text-align: center;
     background:
         radial-gradient(
-            circle,
-            rgba(109, 33, 63, 0.34),
-            transparent 62%
-        );
+        circle,
+        rgba(109,33,63,0.34),
+        transparent 62%);
 }
 
 #yearSection h2 {
@@ -390,9 +377,9 @@ body {
 
 .counter {
     padding: 26px 15px;
-    border: 1px solid rgba(242, 210, 140, 0.2);
+    border: 1px solid rgba(242,210,140,0.2);
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255,255,255,0.05);
 }
 
 .counter strong {
@@ -410,10 +397,10 @@ body {
     max-width: 720px;
     margin: 45px auto 25px;
     padding: 10px;
-    border: 1px solid rgba(242, 210, 140, 0.28);
+    border: 1px solid rgba(242,210,140,0.28);
     border-radius: 28px;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 28px 75px rgba(0, 0, 0, 0.42);
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 28px 75px rgba(0,0,0,0.42);
     overflow: hidden;
 }
 
@@ -439,7 +426,7 @@ body {
     line-height: 1.7;
 }
 
-/* ENVELOPE AND LETTER */
+/* LETTER */
 
 #letterSection {
     padding: 95px 7%;
@@ -458,10 +445,14 @@ body {
     margin: 45px auto 20px;
     position: relative;
     border-radius: 8px;
-    background: linear-gradient(145deg, #a04b6b, #601f3a);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.38);
+    background: linear-gradient(
+        145deg,
+        #a04b6b,
+        #601f3a
+    );
+    box-shadow: 0 25px 60px rgba(0,0,0,0.38);
     cursor: pointer;
-    transition: transform 0.35s ease;
+    transition: 0.35s ease;
 }
 
 .envelope:hover,
@@ -495,7 +486,7 @@ body {
     background: var(--cream);
     color: #35242e;
     text-align: left;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.38);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.38);
 }
 
 .letter h3 {
@@ -536,15 +527,13 @@ footer {
 
 <body>
 
-<!-- Decorative floating lights -->
-
 <div class="light"></div>
 <div class="light"></div>
 <div class="light"></div>
 <div class="light"></div>
 <div class="light"></div>
 
-<!-- NAME-ENTRY SCREEN -->
+<!-- NAME ENTRY -->
 
 <section id="nameGate" class="screen">
 
@@ -579,7 +568,7 @@ footer {
 
 </section>
 
-<!-- WELCOME SCREEN -->
+<!-- WELCOME -->
 
 <section id="welcome" class="screen hidden">
 
@@ -593,9 +582,7 @@ footer {
 
         <p class="opening">
             Somewhere between my night shifts and your late-night
-            studying, between ordinary calls that lasted longer than
-            planned and moments we never knew would become memories,
-            you became one of the most beautiful parts of my life.
+            studying, between ordinary calls that lasted beautiful parts of my life.
         </p>
 
         <p class="date">
@@ -675,24 +662,30 @@ footer {
         <h3>The First Time Our Hands Met 🤍</h3>
 
         <p>
-            You travelled from Machakos, and I waited for you at the
-            stage in town. From there, we boarded a matatu towards
-            Islii, where you were staying with a relative and where
-            I was also working at the time.
+            You travelled from Machakos, and I waited for you at
+            the stage in town. From there, we boarded a matatu
+            towards Islii, where you were staying with a relative
+            and where I was also working at the time.
         </p>
 
         <p>
-            You became nauseous during the journey. Somewhere inside
-            that ordinary matatu, our hands met for the first time.
+            You became nauseous during the journey. Somewhere
+            inside that ordinary matatu, our hands met for the
+            first time.
+        </p>
+
+        <p>
             The world outside carried on normally, but to me,
             something quietly unforgettable had happened.
         </p>
 
         <div class="memory-photo fade-in">
 
+            <!-- CORRECT HANDS PHOTO -->
+
             <img
-                src="IMG-20260212-WA0020.jpg"
-                alt="Two hands forming a heart"
+                src="Snapchat-1247899826.jpg"
+                alt="A photograph of our hands"
             >
 
             <div class="memory-caption">
@@ -702,14 +695,16 @@ footer {
 
                 <br><br>
 
-                Of that matatu to Islii. Of you feeling unwell.
+                Of that matatu to Islii.
+                Of you feeling unwell.
                 Of reaching for each other for the first time.
 
                 <br><br>
 
-                I did not know then how many more times I would
-                get to hold your hand, but I am grateful that
-                first one was not the last. ❤️
+                I did not know then how many more times
+                I would get to hold your hand,
+                but I am grateful that first one
+                was not the last. ❤️
 
             </div>
 
@@ -738,9 +733,9 @@ footer {
         </p>
 
         <p>
-            It became one of those moments that stays alive in
-            small details: the place, the weather and the happiness
-            of simply being together.
+            It became one of those moments that stays alive
+            in small details: the place, the weather and
+            the happiness of simply being together.
         </p>
 
         <button class="button" onclick="showChapter(4)">
@@ -787,17 +782,17 @@ footer {
         <h3>Until Morning 🌙</h3>
 
         <p>
-            One night, I was working another night shift while you
-            were going through a difficult evening. I did not want
-            you to feel alone, so we stayed together through a
-            video call.
+            One night, I was working another night shift while
+            you were going through a difficult evening.
+            I did not want you to feel alone, so we stayed
+            together through a video call.
         </p>
 
         <p>
-            We talked for hours until morning arrived. That night
-            reminded me that love is sometimes simply choosing to
-            stay, listen and be present when someone needs
-            companionship most.
+            We talked for hours until morning arrived.
+            That night reminded me that love is sometimes
+            simply choosing to stay, listen and be present
+            when someone needs companionship most.
         </p>
 
         <button class="button" onclick="showYear()">
@@ -808,7 +803,7 @@ footer {
 
 </main>
 
-<!-- ANNIVERSARY REVEAL -->
+<!-- ONE-YEAR REVEAL -->
 
 <section id="yearSection" class="hidden">
 
@@ -846,15 +841,18 @@ footer {
 
         <div class="year-photo fade-in">
 
+            <!-- CORRECT ONE-YEAR PHOTO -->
+
             <img
-                src="Snapchat-1247899826.jpg"
-                alt="A special memory from our first year"
+                src="IMG-20260212-WA0020.jpg"
+                alt="A memory from our first year"
             >
 
             <p>
-                And somehow, between all those calls, journeys,
-                rainy days, difficult nights and moments I wished
-                could last longer, we became this. ❤️
+                And somehow, between all those calls,
+                journeys, rainy days, difficult nights and
+                moments I wished could last longer,
+                we became this. ❤️
             </p>
 
         </div>
@@ -871,7 +869,7 @@ footer {
 
 </section>
 
-<!-- LETTER -->
+<!-- FINAL LETTER -->
 
 <section id="letterSection" class="hidden">
 
@@ -900,30 +898,37 @@ footer {
             <h3>Gacalisatheydi,</h3>
 
             <p>
-                When I look back at our first year, I do not only
-                remember dates. I remember the ordinary nights that
-                slowly became important because they had you in them.
+                When I look back at our first year,
+                I do not only remember dates.
+                I remember the ordinary nights that slowly
+                became important because they had you in them.
             </p>
 
             <p>
-                I remember helping you with school while I worked
-                through my night shifts. I remember our hands meeting
-                for the first time in a matatu towards Islii.
-                I remember the rain at KICC, the first hug at
-                Bilal Hospital and the night we stayed awake talking
+                I remember helping you with school while
+                I worked through my night shifts.
+                I remember our hands meeting for the first time
+                in a matatu towards Islii.
+            </p>
+
+            <p>
+                I remember the rain at KICC,
+                the first hug at Bilal Hospital,
+                and the night we stayed awake talking
                 until morning.
             </p>
 
             <p>
                 Each memory may appear small from the outside,
-                but together they tell the story of how you became
-                such a meaningful part of my life.
+                but together they tell the story of how you
+                became such a meaningful part of my life.
             </p>
 
             <p>
-                Thank you for the conversations, the patience,
-                the laughter, the companionship and every little
-                moment that made this year ours.
+                Thank you for the conversations,
+                the patience, the laughter,
+                the companionship and every little moment
+                that made this year ours.
             </p>
 
             <p>
@@ -933,14 +938,16 @@ footer {
             </p>
 
             <p>
-                This first year will always be special, not simply
-                because it was our first, but because it was the
-                year in which so many ordinary moments became
-                memories I never want to lose.
+                This first year will always be special,
+                not simply because it was our first,
+                but because it was the year in which
+                so many ordinary moments became memories
+                I never want to lose.
             </p>
 
             <p>
-                Happy First Anniversary, Gacalisatheydi. ❤️
+                Happy First Anniversary,
+                Gacalisatheydi. ❤️
             </p>
 
             <p class="signature">
@@ -967,13 +974,14 @@ footer {
 
 <footer id="footer" class="hidden">
 
-    Our First Year • 20.11.2025 → 20.11.2026 ❤️
+    Our First Year •
+    20.11.2025 → 20.11.2026 ❤️
 
 </footer>
 
 <script>
 
-/* CHECK THE ENTERED NAME */
+/* CHECK NAME */
 
 function checkName() {
 
@@ -1012,12 +1020,16 @@ function checkName() {
 
         }, 700);
 
-    } else if (input === "") {
+    }
+
+    else if (input === "") {
 
         message.textContent =
             "You have to tell me your name first 😅";
 
-    } else {
+    }
+
+    else {
 
         message.textContent =
             "Hmm... this little surprise was not made for that name 👀😂";
@@ -1025,19 +1037,22 @@ function checkName() {
     }
 }
 
-/* PRESS ENTER TO OPEN */
+/* ENTER KEY */
 
 document
     .getElementById("nameInput")
-    .addEventListener("keydown", function (event) {
+    .addEventListener(
+        "keydown",
+        function (event) {
 
-        if (event.key === "Enter") {
-            checkName();
+            if (event.key === "Enter") {
+                checkName();
+            }
+
         }
+    );
 
-    });
-
-/* BEGIN STORY */
+/* BEGIN */
 
 function beginStory() {
 
@@ -1053,36 +1068,33 @@ function beginStory() {
 
     window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behaviour: "smooth"
     });
 }
 
-/* SHOW EACH CHAPTER */
+/* CHAPTERS */
 
-function showChapter(number) {
-
-    const chapter =
-        document.getElementById("chapter" + number);
-
-    chapter.classList.remove("hidden");
+.classList.remove("hidden");
     chapter.classList.add("fade-in");
 
     setTimeout(function () {
 
         chapter.scrollIntoView({
-            behavior: "smooth",
+            behaviour: "smooth",
             block: "center"
         });
 
     }, 100);
 }
 
-/* SHOW THE ANNIVERSARY REVEAL */
+/* YEAR */
 
 function showYear() {
 
     const section =
-        document.getElementById("yearSection");
+        document.getElementById(
+            "yearSection"
+        );
 
     section.classList.remove("hidden");
     section.classList.add("fade-in");
@@ -1090,19 +1102,21 @@ function showYear() {
     setTimeout(function () {
 
         section.scrollIntoView({
-            behavior: "smooth",
+            behaviour: "smooth",
             block: "center"
         });
 
     }, 100);
 }
 
-/* SHOW THE ENVELOPE */
+/* LETTER SECTION */
 
 function showLetterSection() {
 
     const section =
-        document.getElementById("letterSection");
+        document.getElementById(
+            "letterSection"
+        );
 
     section.classList.remove("hidden");
     section.classList.add("fade-in");
@@ -1110,19 +1124,21 @@ function showLetterSection() {
     setTimeout(function () {
 
         section.scrollIntoView({
-            behavior: "smooth",
+            behaviour: "smooth",
             block: "start"
         });
 
     }, 100);
 }
 
-/* OPEN THE FINAL LETTER */
+/* OPEN LETTER */
 
 function openLetter() {
 
     const letter =
-        document.getElementById("finalLetter");
+        document.getElementById(
+            "finalLetter"
+        );
 
     letter.classList.remove("hidden");
     letter.classList.add("fade-in");
@@ -1135,14 +1151,14 @@ function openLetter() {
     setTimeout(function () {
 
         letter.scrollIntoView({
-            behavior: "smooth",
+            behaviour: "smooth",
             block: "start"
         });
 
     }, 200);
 }
 
-/* RESTART THE EXPERIENCE */
+/* RESTART */
 
 function restartStory() {
 
@@ -1178,7 +1194,7 @@ function restartStory() {
 
     window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behaviour: "smooth"
     });
 }
 
